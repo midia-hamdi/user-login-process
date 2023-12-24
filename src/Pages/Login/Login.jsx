@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react'
 import './style.css'
 import axios from 'axios'
-import { useAuthDispatch } from '../../Context'
+import { useAuthDispatch, useAuthState } from '../../Context'
 import { actionTypes } from '../../Context/reducer'
 
 const fetchToken =  async (username, password) => {
@@ -25,7 +25,7 @@ export default function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [token, setToken] = useState(null)
-    const {loading} = useAuthDispatch()
+    const {loading} = useAuthState()
 
     const dispatch = useAuthDispatch()
 
